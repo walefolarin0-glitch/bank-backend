@@ -1,0 +1,20 @@
+name: Bank App CI — Unit & Integration Tests
+
+on:
+  push:
+    branches: [ main, develop ]
+  
+
+
+jobs:
+  test:
+    name: Build & Test (Java / Spring Boot)
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out the repository
+      uses: actions/checkout@v2
+
+    - name: Docker Build
+      run: |
+        hostnamectl
