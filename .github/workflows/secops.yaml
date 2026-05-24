@@ -48,8 +48,12 @@ jobs:
           distribution: 'temurin'
           
       - name: maven clean verify  
-        run: mvn clean verify -DnvdApiKey=${{ secrets.NVD_API_KEY_01 }}
-
+        run: |
+          mvn clean verify \
+          -DnvdApiKey=${{ secrets.NVD_API_KEY_01 }}
+          -Dossindex.user=${{ secrets.OSSINDEX_USERNAME }} \
+          -Dossindex.token=${{ secrets.OSSINDEX_TOKEN }}
+          
       - name: SonarQube Scan
         uses: sonarsource/sonarqube-scan-action@master
         with:
