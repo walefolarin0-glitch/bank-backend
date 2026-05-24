@@ -51,6 +51,7 @@ jobs:
         run: |
           mvn clean verify \
           -DnvdApiKey=${{ secrets.NVD_API_KEY_01 }}
+          -DossindexAnalyzerEnabled=false
         
 
       - name: SonarQube Scan
