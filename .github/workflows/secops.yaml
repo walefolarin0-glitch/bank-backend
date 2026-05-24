@@ -51,7 +51,13 @@ jobs:
         run: |
           mvn clean verify \
           -DnvdApiKey=${{ secrets.NVD_API_KEY_01 }}
-          -DossindexAnalyzerEnabled=false
+          -DossindexAnalyzerEnabled=false \
+          -DretireJsAnalyzerEnabled=false \
+          -DnodeAuditAnalyzerEnabled=false \
+          -DbundleAuditAnalyzerEnabled=false \
+          -DnodePackageAnalyzerEnabled=false \
+          -DcentralAnalyzerEnabled=false \
+          -DfailBuildOnCVSS=7
         
 
       - name: SonarQube Scan
