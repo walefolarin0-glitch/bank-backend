@@ -55,8 +55,8 @@ jobs:
         with:
           projectBaseDir: .
           args: >
-            -Dsonar.organization=cloud-solution-us
-            -Dsonar.projectKey=bank-app-backend
+            -Dsonar.organization=walefolarin0-glitch
+            -Dsonar.projectKey=KP1iR16iZjnXDi9RYTkPWQ3XUYI5Z4nF
             -Dsonar.java.binaries=target/classes
             -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
         env:
