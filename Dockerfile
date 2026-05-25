@@ -15,7 +15,7 @@ COPY pom.xml /app/pom.xml
 # Download all Maven dependencies declared in pom.xml into the container
 # --offline flag in later steps works because all deps are already cached here
 # This dramatically speeds up repeat builds
-RUN mvn dependency:go-offline
+RUN mvn dependency:go-offline -B
 
 # Copy the entire src folder into the container's /app/src directory
 # Done after dependency download so code changes don't invalidate the deps cache
