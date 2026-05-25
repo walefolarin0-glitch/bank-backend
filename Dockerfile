@@ -15,7 +15,7 @@ COPY pom.xml /app/pom.xml
 # Download all Maven dependencies declared in pom.xml into the container
 # --offline flag in later steps works because all deps are already cached here
 # This dramatically speeds up repeat builds
-RUN mvn dependency:go-offline
+RUN mvn dependency
 
 # Copy the entire src folder into the container's /app/src directory
 # Done after dependency download so code changes don't invalidate the deps cache
@@ -41,6 +41,8 @@ WORKDIR /app
 # Nothing else from Stage 1 comes across — no Maven, no source code, no JDK
 # This is the key security and size benefit of multi-stage builds
 COPY --from=builder /app/target/*.jar app.jar
+
+EXPOSE 5000
 
 # Define the command that runs when the container starts
 CMD ["java", "-jar", "app.jar"]
