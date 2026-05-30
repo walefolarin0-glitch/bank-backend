@@ -42,7 +42,7 @@ WORKDIR /app
 # This is the key security and size benefit of multi-stage builds
 COPY --from=builder /app/target/*.jar app.jar
 
-EXPOSE 5000
+EXPOSE 8080
 
 # Define the command that runs when the container starts
 CMD ["java", "-jar", "app.jar"]
