@@ -44,5 +44,5 @@ COPY --from=builder /app/target/*.jar app.jar
 
 EXPOSE 8080
 
-# Define the command that runs when the container starts
+# Define the command that runs when the container starts.
 CMD ["java", "-jar", "app.jar"]
