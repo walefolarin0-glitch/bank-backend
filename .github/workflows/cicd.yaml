@@ -65,11 +65,11 @@ jobs:
           GIT_USERNAME: ${{ secrets.GIT_USERNAME }}
           GIT_PASSWORD: ${{ secrets.GIT_PASSWORD }}
       run: |
-         git clone https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/pod9project/kubernetes-manifest.git
+         git clone https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/walefolarin0-glitch/kubernetes-manifest.git
          
          cd kubernetes-manifest
-         git config --global user.email "pod9project@gmail.com"
-         git config --global user.name "pod9project"
+         git config --global user.email "walefolarin0@gmail.com"
+         git config --global user.name "Pod15project"
 
          sed -i "s+${{ env.ECR_REGISTRY }}/${{ env.ECR_REPOSITORY }}:.*+${{ env.ECR_REGISTRY }}/${{ env.ECR_REPOSITORY }}:${{ env.IMAGE_TAG }}+g" ./bank-project/backendapi.yaml
 
