@@ -62,7 +62,7 @@ jobs:
     needs: Continues-Integration_build_and_push
     env:
       ECR_REGISTRY: 296651897181.dkr.ecr.us-east-1.amazonaws.com
-      ECR_REPOSITORY: bank-backend
+      ECR_REPOSITORY: bank-backendapi
       IMAGE_TAG: ${{ github.run_number }}
     steps:
     - name: Checkout repository
